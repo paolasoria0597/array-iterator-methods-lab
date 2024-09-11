@@ -129,8 +129,28 @@ const inventorNamedAda = inventors.find((inventor) => {
 );
 console.log(inventorNamedAda);
 
+/*
+Exercise 5: Array.prototype.map()
+
+Use the Array.prototype.map() method to reformat each name in the 'people' 
+array. The goal is to convert names from "Last, First" format to "First Last" 
+format.
+
+Hint: Use the String.prototype.split() method to separate the first and last 
+      names. You can split the string using ', ' as the separator.
+      After splitting the names, rearrange them to the "First Last" format.
+*/
 
 
+// Complete the exercise in the space below:
+
+const firstLast= people.map((person) => {
+    const parts = person.split(','); // this medod will split each strimg of names into two seperate substrings ['firstName', 'lastName']
+    const lastName = parts[0]; // lastName is index 0 in the parts array
+    const firstName = parts[1]; // 'firstName' is at index 1 in the array.
+    return firstName + ' ' + lastName;
+});
+console.log(firstLast);
 
 
-
+  
