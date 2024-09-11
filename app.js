@@ -145,8 +145,8 @@ Hint: Use the String.prototype.split() method to separate the first and last
 // Complete the exercise in the space below:
 
 const firstLast= people.map((person) => {
-    const parts = person.split(','); // this medod will split each strimg of names into two seperate substrings ['firstName', 'lastName']
-    const lastName = parts[0]; // lastName is index 0 in the parts array
+    const parts = person.split(','); // this metod will split each strimg of names into two seperate substrings ['firstName', 'lastName']
+    const lastName = parts[0]; // lastName is at index 0 in the array
     const firstName = parts[1]; // 'firstName' is at index 1 in the array.
     return firstName + ' ' + lastName;
 });
