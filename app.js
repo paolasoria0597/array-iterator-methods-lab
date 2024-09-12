@@ -152,5 +152,135 @@ const firstLast= people.map((person) => {
 });
 console.log(firstLast);
 
+/*
+Exercise 6: Array.prototype.some()
+
+Determine if there is at least one person in the devs array who is 18 years 
+old or older.
+
+- You have an array of people with their respective ages.
+- Use the Array.prototype.some() method to check if any person in the array is 
+  18 years old or older.
+- Store the result (true or false) in the variable 'isAdultPresent'. 
+*/
+
+  const isAdultPresent = devs.some((dev) => {
+          const age = 2024- dev.year;
+                return age >= 18; });
+
+  console.log(isAdultPresent);
+
+/*
+Exercise 7: Array.prototype.every()
+
+Use Array.prototype.every() to determine if every person in the devs array is 
+19 years old or older.
+
+- You have an array of individuals, each with their year of birth represented
+  by the 'year' property.
+- Use the Array.prototype.every() method to verify if every individual in the
+  array is at least 19 years old.
+- Store the result (true or false) in the variable 'isEveryone19OrOlder'.
+*/
+
+const isEveryone19OrOlder =devs.every((dev) => {
+  const age = 2024 - dev.year
+    age <= 19;
+})
+console.log(isEveryone19OrOlder);
+
+/*
+Exercise 8: Array.prototype.find()
+
+Use Array.prototype.find() to identify and retrieve the comment object with 
+a specific ID 823423 from an array of comment objects.
+
+- Assign the found comment object to the variable 'commentById'.
+*/
+
+const commentById = comments.find((comment) => { 
+    return comment.id===823423;
+});
+console.log(commentById);
+
+/*
+Exercise 9: Array.prototype.findIndex()
+
+Determine the index of the comment that has a specific ID 123523 in an array 
+of comment objects.
+
+- Store the index in the variable 'idx'.
+*/
+
+const idx = comments.findIndex((comment) => {
+    return comment.id === 123523;
+});
+
+console.log(idx);
+
+
+/*
+Level Up exercise 1: Array.prototype.reduce()
+
+Calculate the combined lifespan of all the inventors using 
+Array.prototype.reduce()
+
+- Each object in the array includes these properties: 
+  'first', 'last', 'year' (birth year), and 'passed' (year of death).
+- Use the Array.prototype.reduce() method to calculate the sum of the total 
+  years lived by all the inventors.
+- Store the total sum in the variable 'totalYearsLived'.
+
+Hints:
+
+- Inside the reduce callback function, calculate the lifespan of each inventor 
+  (passed - year).
+- Accumulate this lifespan in the 'totalYearsLived' variable.
+- Remember, reduce takes a callback function and an initial value for the 
+  accumulator.
+*/
+
+
+
+// Complete the exercise in the space below:
+
+const totalYearsLived = inventors.reduce(( total, inventor )=> {
+const lifespan= inventor.passed - inventor.year;
+   return total + lifespan;
+}, 0);
+
+console.log(totalYearsLived);
+
+
+/*
+Level Up exercise 2: Array.prototype.reduce()
+
+Tallying travel methods using Array.prototype.reduce(). 
+
+Count the number of times each travel method appears in the 'travelMethods'
+array.
+
+- The resulting object should have keys as the travel methods 
+  ('car', 'truck', 'bike', etc.) and values as their respective counts.
+- Store this object in the variable 'travelMethodCounts'.
+
+Hints:
+- Inside the reduce function, check if the travel method already exists as a key
+  in your accumulator object. If it does, increment its count. If not, add it 
+  to the object and give it a value of 1.
+- Since you want to return an object, be sure to pass an empty {} for the 
+  initial value of the "accumulator".
+*/
+
+const travelMethodCounts= travelMethods.reduce((total, travelMethod) => {
+     if (total[travelMethod]) {
+      total[travelMethod]++
+     } else {total[travelMethod] = 1;} 
+     return total; 
+}, {});
+
+
+console.log(travelMethodCounts);
+
 
   
